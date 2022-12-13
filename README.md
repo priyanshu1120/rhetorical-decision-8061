@@ -4,7 +4,8 @@
 
 ## Amit - Admin section (login , register, profile)
 ## Priyanshu - User section (login , register, profile)
-## rakesh - 
-## Ayush - 
+## rakesh - Job and internship section 
+## Ayush - courses section , footer 
+## vikaram - home page , contact , navbar  
 
 
