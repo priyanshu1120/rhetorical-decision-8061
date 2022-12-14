@@ -19,10 +19,10 @@ function Navbar() {
 
     return (
         <>
-            <Flex justifyContent="space-between" p="0 25px 5px 25px" alignItems="center">
+            <Flex justifyContent="space-between" p="8px 25px 5px 25px" alignItems="center" boxShadow='base' rounded='md' bg='white'>
                 <Flex gap={5}>
                     <HamburgerIcon onClick={onOpen} _hover={{ backgroundColor: "lightgray" }} padding="5px" boxSize={10} borderRadius='full' />
-                    <Link to="/"> <Image w="120px" h="60px" src="/InternLogo.png" /> </Link>
+                    <Link to="/"> <Image w="150px" h="60px" src="/InternLogo.png" /> </Link>
                     
                     <Drawer placement='left' onClose={onClose} isOpen={isOpen} >
                         <DrawerOverlay />
