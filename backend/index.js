@@ -3,23 +3,28 @@ const app = express()
 app.use(express.json())
 
 require('dotenv').config()
-const {connect} = require("./config/db")
+const {connect} = require("./config/db");
 const {studentUserRouter} = require("./routes/StudentRoute/user.route")
 const {studentauthentication} = require("./middlewares/studentauthentication")
-const {experienceRouter} = require("./routes/StudentRoute/experience.route")
+const {experienceRouter} = require("./routes/StudentRoute/experience.route");
+const { companyController } = require("./routes/AdminRoute/company.route");
+const { CompanyAuth } = require("./middlewares/company.auth");
 app.get("/",(req,res)=>{
     res.send("server run successfully")
 })
 
-app.use("/studentuser",studentUserRouter)
+app.use("/company",companyController);
+app.use(CompanyAuth)
 
+app.use("/studentuser",studentUserRouter)
 app.use(studentauthentication)
 app.use("/studentexperience",experienceRouter)
 
-app.listen(process.env.PORT,async(req,res)=>{
+app.listen(8080,async(req,res)=>{
        try{
-          await connect
-          console.log(`server run http://localhost:${process.env.PORT}`)
+          await connect;
+          console.log("DB is connected");
+          console.log(`PORT is Listening at ${8080}`)
        }catch(err){
         console.log("somthing error in server")
         console.log(err)
