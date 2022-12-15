@@ -14,7 +14,9 @@ const UserSchema = mongoose.Schema({
       address:{type:String},
       state:{type:String},
       pincode:{type:Number},
-      about:{type:String}
+      about:{type:String},
+      category:{type:String},
+      find:{type:String}
 
 })
 
