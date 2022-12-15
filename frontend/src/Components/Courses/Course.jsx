@@ -19,8 +19,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+
 const Course = () => {
-    console.log(data)
+  // console.log(data,"course")
+  //   console.log(handleAddProduct)
   return (
     <div>
       <Box
@@ -90,7 +92,10 @@ const Course = () => {
                 <Button variant="ghost" colorScheme="blue">
                   Know More
                 </Button>
-                <Button color="white" bg="#df1e2e" >              
+                <Button
+                  color="white"
+                  bg="#df1e2e"
+                >
                   Add to cart
                 </Button>
               </ButtonGroup>
@@ -100,17 +105,11 @@ const Course = () => {
       </SimpleGrid>
 
       <Box border="1px solid red" bg="#df1e2e">
-        <Text
-          noOfLines={[6, 4, 2]}
-          ml="auto"
-          align="center"
-        >
+        <Text noOfLines={[6, 4, 2]} ml="auto" align="center">
           Use Coupon Code FIRSTCOURSE to avail a discount of 20% on your course
-          enrolment. Offer expires in 
+          enrolment. Offer expires in
         </Text>
       </Box>
-
-      
     </div>
   );
 };
