@@ -2,13 +2,7 @@ import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, useDisclosure, DrawerC
 import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { BsFillCartFill } from "react-icons/bs";
-import {
-    MdLogout,
-    MdBook,
-    MdDashboard,
-    MdPerson,
-    MdFormatAlignJustify,
-} from "react-icons/md";
+import { MdLogout, MdBook,MdDashboard,MdPerson,MdFormatAlignJustify,} from "react-icons/md";
 import { IoBag } from "react-icons/io5";
 import { HiPhone } from "react-icons/hi";
 import { BsCurrencyDollar } from "react-icons/bs";
@@ -19,10 +13,10 @@ function Navbar() {
 
     return (
         <>
-            <Flex justifyContent="space-between" p="0 25px 5px 25px" alignItems="center">
+            <Flex justifyContent="space-between" p="8px 25px 5px 25px" alignItems="center" boxShadow='base' rounded='md' bg='white'>
                 <Flex gap={5}>
                     <HamburgerIcon onClick={onOpen} _hover={{ backgroundColor: "lightgray" }} padding="5px" boxSize={10} borderRadius='full' />
-                    <Link to="/"> <Image w="120px" h="60px" src="/InternLogo.png" /> </Link>
+                    <Link to="/"> <Image w="150px" h="60px" src="/InternLogo.png" /> </Link>
                     
                     <Drawer placement='left' onClose={onClose} isOpen={isOpen} >
                         <DrawerOverlay />
