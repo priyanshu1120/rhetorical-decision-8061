@@ -3,7 +3,10 @@ const cors = require("cors");
 const app = express()
 app.use(cors());
 app.use(express.json())
-
+const cors = require("cors")
+app.use(cors({
+    origin:"*"
+}))
 require('dotenv').config()
 const {connect} = require("./config/db");
 const {studentUserRouter} = require("./routes/StudentRoute/user.route")
@@ -21,6 +24,8 @@ app.use(CompanyAuth)
 app.use("/studentuser",studentUserRouter)
 app.use(studentauthentication)
 app.use("/studentexperience",experienceRouter)
+app.use("/studenteducation",educationRouter)
+
 
 app.listen(8080,async(req,res)=>{
        try{

@@ -1,0 +1,74 @@
+[
+      {
+        "id": 1,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/it.jpg",
+        "heading": "IT Starter Pack (4 Courses)",
+        "sub_heading": "Learn the most demanded skills in the IT industry today. Sig ...",
+        "price": 32999,
+        "dis_price": 15999,
+        "emi": 915
+      },
+      {
+        "id": 2,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/digital-marketing-course.png",
+        "heading": "Digital Marketing Course",
+        "sub_heading": "Learn the art of digital marketing. Sign up for this online ..",
+        "price": 11999,
+        "dis_price": 5999,
+        "emi": 343
+      },
+      {
+        "id": 3,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/data-analytics-r-programming-course.png",
+        "heading": "Data Analytics With R Programming Course",
+        "sub_heading": "Learn data science online. Join this online data analytics c ...",
+        "price": 11999,
+        "dis_price": 5999,
+        "emi": 343
+      },
+      {
+        "id": 4,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/web-development-course.png",
+        "heading": "Web Development Course",
+        "sub_heading": "Learn the art of web design and web development. Join this o ...",
+        "price": 7999,
+        "dis_price": 3999,
+        "emi": 229
+      },
+      {
+        "id": 5,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/tally-gst-course.png",
+        "heading": "Tally + GST Course",
+        "sub_heading": "Sign up for this online tally and gst course and learn how t ...",
+        "price": 7999,
+        "dis_price": 3999,
+        "emi": 229
+      },
+      {
+        "id": 6,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/android-app-development-kotlin-course.png",
+        "heading": "Android App Development Using Kotlin Course",
+        "sub_heading": "Learn the art of android app design and web development. Joi ...",
+        "price": 7999,
+        "dis_price": 5999,
+        "emi": 348
+      },
+      {
+        "id": 7,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/advanced-excel-course.png",
+        "heading": "Advanced Excel Course",
+        "sub_heading": "Master MS Excel. Take the online ms excel course and learn t ...",
+        "price": 5999,
+        "dis_price": 2999,
+        "emi": 172
+      },
+      {
+        "id": 8,
+        "image": "https://assets.interntheory.com/creative/courses/thumbnails/r-programming-course.png",
+        "heading": "R Programming Course",
+        "sub_heading": "Learn r programming online. Sign up for this online r progra ...",
+        "price": 5999,
+        "dis_price": 3999,
+        "emi": 172
+      }
+    ]
