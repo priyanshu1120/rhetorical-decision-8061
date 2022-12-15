@@ -14,7 +14,7 @@ companyController.post("/register",async (req, res) => {
     const userexits = await CompanyModel.findOne({email})
     //TODO
     if(userexits?.email){
-        res.send({"msg" : "Try loggin in, already exist"})
+        res.send({"msg" : "Try loggin in, user already exist"})
     } else{
         bcrypt.hash(password, 5, async function(err, hash) {
             if(err){
@@ -30,7 +30,7 @@ companyController.post("/register",async (req, res) => {
             })
             try{
                 await user.save()
-                res.json({msg : "Signup successfull"})
+                res.send(user)
             }
             catch(err){
                 console.log(err)

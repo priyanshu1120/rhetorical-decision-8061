@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import MainRoutes from './AllRoutes/MainRoutes';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <div>React app</div>
+     <MainRoutes/>
     </div>
   );
 }
