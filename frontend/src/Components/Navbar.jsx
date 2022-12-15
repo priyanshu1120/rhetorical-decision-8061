@@ -2,13 +2,7 @@ import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, useDisclosure, DrawerC
 import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { BsFillCartFill } from "react-icons/bs";
-import {
-    MdLogout,
-    MdBook,
-    MdDashboard,
-    MdPerson,
-    MdFormatAlignJustify,
-} from "react-icons/md";
+import { MdLogout, MdBook,MdDashboard,MdPerson,MdFormatAlignJustify,} from "react-icons/md";
 import { IoBag } from "react-icons/io5";
 import { HiPhone } from "react-icons/hi";
 import { BsCurrencyDollar } from "react-icons/bs";
