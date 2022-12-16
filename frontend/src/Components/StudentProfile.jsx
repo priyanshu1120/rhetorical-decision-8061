@@ -20,7 +20,7 @@ const StudentProfile = () => {
     <Box w="xs" h="350px" p={[8,10]} ml="80px" mt="10px" rounded='md' bg='white' boxShadow="rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset"  >
          
          <VStack >
-             <Image src="" alt="" w="100px" h="100px"/>
+             <Image src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg" alt="" w="100px" h="100px"/>
             <Link to ="/profile/student"><Button colorScheme='messenger' size="xs">MY PROFILE</Button></Link>
             <Text>Priyanshu kaushik</Text>
             <Box w="250px" border="1px solid #999999"></Box>
