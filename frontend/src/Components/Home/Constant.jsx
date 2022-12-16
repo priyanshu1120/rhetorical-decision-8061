@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 
-const Adv = () => {
+const Constant = () => {
   return (
     <Box display="flex" height="auto" width="100%">
       <Box
@@ -52,4 +52,4 @@ const Adv = () => {
   );
 };
 
-export default Adv;
+export default Constant;

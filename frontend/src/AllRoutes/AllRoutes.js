@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Course from '../Components/Courses/Course'
+import Home from '../Components/Home/Home'
 import LoginStudent from '../Pages/LoginStudent'
 import RegisterStudent from '../Pages/RegisterStudent'
 import StudentDashboard from '../Pages/StudentDashboard'

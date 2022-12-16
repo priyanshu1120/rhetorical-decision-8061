@@ -1,5 +1,5 @@
 import React from 'react'
-import Adv from './Adv'
+import Adv from './Constant'
 import { Details } from './Details'
 import ImageSlider from './ImageSlider'
 import Product from './Product'
