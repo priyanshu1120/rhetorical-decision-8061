@@ -6,7 +6,6 @@ import AllRoutes from './AllRoutes/AllRoutes';
 function App() {
   return (
     <div className="App">
-     <div>React app</div>
      <Navbar/>
      <AllRoutes/>
     </div>

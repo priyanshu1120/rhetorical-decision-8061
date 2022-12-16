@@ -8,6 +8,8 @@ import CompanyDashboard from '../Pages/CompanyDashboard';
 import CompanyLoginPage from '../Pages/CompanyLoginPage'
 import CompanyRegisterPage from '../Pages/CompanyRegisterPage';
 import InternShip from '../Pages/InternShip'
+import InternShipCreate from '../Pages/InternShipCreate'
+// import InternShipCreationPage from '../Pages/InternShipCreate'
 
 const AllRoutes = () => {
   return (
@@ -21,6 +23,7 @@ const AllRoutes = () => {
             <Route path={"/company/register"} element={<CompanyRegisterPage/>} />
              <Route path={"/company/login"} element={<CompanyLoginPage/>} />
              <Route path={"/internship"} element={<InternShip/>} />
+             <Route path={"/internship/create"} element={<InternShipCreate/>} />
 
 
         </Routes>
