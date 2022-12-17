@@ -82,12 +82,13 @@ const RegisterStudent = () => {
       backgroundImage="url('https://assets.interntheory.com/creative/Web-Banner.jpg')"
       w="100vw"
       h="auto"
+      pt="20px"
     >
       <Box
         w={["full", "600px"]}
         m="auto"
         p={[8, 10]}
-        mt={[20, "10vh"]}
+        mt={[1, "1px"]}
         border={["none", "1px"]}
         boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
         borderColor={["", "white"]}
