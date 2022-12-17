@@ -156,7 +156,6 @@ function Navbar() {
                     </Drawer>
                 </Flex>
 
-                <Box>
                     <Icon
                         width="25px"
                         height="25px"
