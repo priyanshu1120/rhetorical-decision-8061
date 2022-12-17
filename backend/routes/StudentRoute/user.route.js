@@ -5,6 +5,24 @@ require("dotenv").config()
 var jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+
+studentUserRouter.get("/profile", async(req,res)=>{
+     
+          try{
+                let data = await UserModel.find()
+                res.send(data)
+          }catch(err){
+            console.log(err)
+            res.send(err)
+          }  
+})   
+
+
+
+
+
+
+
 studentUserRouter.post("/signup", async (req, res) => {
   let { email, password, firstname, lastname,mobile,dob,city,preference,language,skill, address,state,pincode,about} = req.body;
   let userpresent = await UserModel.findOne({ email });
@@ -15,7 +33,7 @@ studentUserRouter.post("/signup", async (req, res) => {
       bcrypt.hash(password, 5, async function (err, hash) {
         const userData = new UserModel({ email, password:hash,firstname, lastname,mobile,dob,city,preference,language,skill, address,state,pincode,about });
         await userData.save();
-        res.send([userData]);
+        res.send("user created successfull");
       });
     
     } catch (err) {
@@ -35,7 +53,7 @@ try{
             bcrypt.compare(password, hashed_password, function (err, result) {
             if (result) {
                     const token = jwt.sign({ userID: user[0]._id }, `${process.env.KEY}`);
-                        res.send({ msg: "Login successfull", token: token });
+                        res.send({ msg: "Login successfull",data:user, token: token });
             } else {
                         res.send("authentication failed");
                     }

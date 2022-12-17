@@ -4,8 +4,9 @@ const mongoose = require("mongoose")
 const educationSchema = mongoose.Schema({
     graduation:{type:String},
     year:{type:String},
-    collage:{type:String},
+    college:{type:String},
     degree:{type:String},
+    status:{type:String},
     userID : {type:String},
 })
 

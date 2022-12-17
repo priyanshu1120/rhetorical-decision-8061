@@ -10,6 +10,9 @@ const StudentProfile = () => {
   const updateSize = () =>
     setSize(window.innerWidth);
   useEffect(() => (window.onresize = updateSize), []);
+  const student = JSON.parse(localStorage.getItem("student"))
+  var data = student[0]
+
 
 
   return (
@@ -22,10 +25,10 @@ const StudentProfile = () => {
          <VStack >
              <Image src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg" alt="" w="100px" h="100px"/>
             <Link to ="/profile/student"><Button colorScheme='messenger' size="xs">MY PROFILE</Button></Link>
-            <Text>Priyanshu kaushik</Text>
+            <Text>{data.firstname} {data.lastname}</Text>
             <Box w="250px" border="1px solid #999999"></Box>
-            <Text>priyanshukaushik796@gmail.com</Text>
-            <Text>+91 8057247701</Text>
+            <Text>{data.email}</Text>
+            <Text>+91 {data.mobile}</Text>
          </VStack>
     </Box>):(<Box></Box>)
 
