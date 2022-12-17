@@ -48,7 +48,7 @@ const StudentEducation = () => {
 <>
 {
     Educationdata.length>0 && Educationdata.map((education,index)=>
-    <SimpleGrid w="90%" mt="40px" columns={[1,1,1]} spacing={[5,5,5]} p={[2,2]} borderTop="1px solid red" borderBottom={"1px solid black"}>
+    <SimpleGrid key={education._id} w="90%" mt="40px" columns={[1,1,1]} spacing={[5,5,5]} p={[2,2]} borderTop="1px solid red" borderBottom={"1px solid black"}>
       <HStack w={["100%" ]} justify={["space-between"]} align={["center"]} >
       <Heading as ="h2" fontSize={[24]} fontWeight={[500]} fontFamily={"sans-serif"}>{education.graduation}</Heading>
       <Text>{education.status}</Text>

@@ -26,6 +26,7 @@ const EditModalEducation = (data) => {
       year:edudata.data.year,
       status:edudata.data.status
     })
+    
     const token = JSON.parse(localStorage.getItem("token"))
     const toast = useToast()
     const navigate = useNavigate()

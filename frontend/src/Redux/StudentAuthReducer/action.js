@@ -18,7 +18,7 @@ export const login  = (payload) => (dispatch) => {
     dispatch({type:Types.LOGIN_STUDENT_LOADING})
     return axios.post("http://localhost:8080/studentuser/login",payload)
         .then((res)=>{
-           return dispatch({type:Types.LOGIN_STUDENT_SUCCESS , payload:res.data.token})
+           return dispatch({type:Types.LOGIN_STUDENT_SUCCESS , payload:res.data})
         })
         .catch((err)=>{
             dispatch({type:Types.LOGIN_STUDENT_ERROR})  

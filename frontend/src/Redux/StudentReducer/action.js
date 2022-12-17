@@ -76,3 +76,81 @@ export const  createEducation = (payload) =>  (dispatch) =>{
        })
    
    }
+
+
+
+
+
+   // <=============ExperienceFunction================>
+
+export const  getExperience= (header) =>(dispatch) =>{
+    dispatch({type:Types.GET_EXPERIENCE_LOADING})
+       return  axios.get(`${baseurl}/studentexperience`,{
+           headers: {
+              "authorization": header
+           }
+       })
+       .then((res)=>{
+            dispatch({type:Types.GET_EXPERIENCE_SUCCESS,payload:res.data})
+       })
+       .catch((err)=>{
+           dispatch({type:Types.GET_EXPERIENCE_ERROR})  
+       })
+   
+   }
+   
+   
+   export const  createExperience = (payload) =>  (dispatch) =>{
+     
+       dispatch({type:Types.CREATE_EXPERIENCE_LOADING})
+          return  axios.post(`${baseurl}/studentexperience/create`,payload.input,{
+           headers: {
+               "authorization": payload.token
+            }
+          })
+          .then((res)=>{
+        return  dispatch({type:Types.CREATE_EXPERIENCE_SUCCESS,payload:res.data})
+          })
+          .catch((err)=>{
+              dispatch({type:Types.CREATE_EXPERIENCE_ERROR})  
+          })
+      
+      }
+   
+   
+      export const  deleteExperience = (payload) =>  (dispatch) =>{
+   
+       dispatch({type:Types.DELETE_EXPERIENCE_LOADING})
+          return  axios.delete(`${baseurl}/studentexperience/${payload.id}`,{
+           headers: {
+               "authorization": payload.token
+            }
+          })
+          .then((res)=>{
+           return  dispatch({type:Types.DELETE_EXPERIENCE_SUCCESS,payload:res.data})
+          })
+          .catch((err)=>{
+              dispatch({type:Types.DELETE_EXPERIENCE_ERROR})  
+          })
+      
+      }
+   
+   
+   
+      
+      export const  updateExperience = (payload) =>  (dispatch) =>{
+      
+       dispatch({type:Types.UPDATE_EXPERIENCE_LOADING})
+          return  axios.put(`${baseurl}/studentexperience/${payload.id}`,payload.input,{
+           headers: {
+               "authorization": payload.token
+            }
+          })
+          .then((res)=>{
+           return  dispatch({type:Types.UPDATE_EXPERIENCE_SUCCESS,payload:res.data})
+          })
+          .catch((err)=>{
+              dispatch({type:Types.UPDATE_EXPERIENCE_ERROR})  
+          })
+      
+      }
