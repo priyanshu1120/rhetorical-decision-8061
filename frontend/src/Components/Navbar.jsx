@@ -19,7 +19,7 @@ function Navbar() {
                 <Flex gap={5}>
                     <HamburgerIcon onClick={onOpen} _hover={{ backgroundColor: "lightgray" }} padding="5px" boxSize={10} borderRadius='full' />
                     <Link to="/"> <Image w="150px" h="60px" src="/InternLogo.png" /> </Link>
-
+                    
                     <Drawer placement='left' onClose={onClose} isOpen={isOpen} >
                         <DrawerOverlay />
                         <DrawerContent>
