@@ -3,34 +3,63 @@ import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import { useDisclosure } from '@chakra-ui/hooks'
 import { Input } from '@chakra-ui/input'
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/modal'
-import { Text } from '@chakra-ui/react'
+import { Text, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import {MdModeEdit} from "react-icons/md"
-
-const eduObj = {
-  firstname: "",
-  lastname: "",
-  email: "",
-  mobile: "",
-  password: "",
-  city: "",
-  preference: "",
-  category: "",
-  find: "",
-};
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { getEducation, updateEducation } from '../Redux/StudentReducer/action'
 
 
-const EditModalEducation = () => {
+
+
+const EditModalEducation = (data) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
-    const [input, setInput] = useState(eduObj);
-    const mobileError = input.mobile === "";
+    var edudata = data
+    var id = edudata.data._id
+    const [edu,setEducation] = useState( {
+      graduation: edudata.data.graduation,
+      college: edudata.data.college,
+      degree: edudata.data.degree,
+      year:edudata.data.year,
+      status:edudata.data.status
+    })
+    const token = JSON.parse(localStorage.getItem("token"))
+    const toast = useToast()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()  
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setInput({ ...input, [name]: value });
+        setEducation({ ...edu, [name]: value });
       };
 
+
+      const handleEdit = ()=>{
+            if(id){
+             dispatch(updateEducation({id,token,edu})).then((res)=>{
+                if(res.payload){
+                   toast({
+                    title:"Education updated successfully",
+                    description:"you can update more..",
+                    status: "success",
+                    duration: 2000,
+                    isClosable: true,
+                    position:"top"
+                   })
+                   setTimeout(() => {
+                  }, 2000);  
+                }
+                dispatch(getEducation(token))
+                 onClose() 
+           })
+        } else{
+          alert("data not Found")
+        }
+    
+      }
 
   return (
     <>
@@ -49,12 +78,13 @@ const EditModalEducation = () => {
             <FormLabel fontSize={"12px"} color="#949494">Level Of Education*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={edu.graduation}
+              name="graduation"
               onChange={handleInputChange}
               variant="flushed"
               placeholder="Level Of Education*"
               fontSize={18}
+              required
             />
           
           </FormControl>
@@ -63,8 +93,8 @@ const EditModalEducation = () => {
             <FormLabel  fontSize={"12px"} color="#949494">Instituation Name*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={edu.college}
+              name="college"
               onChange={handleInputChange}
               variant="flushed"
               placeholder="Instituation Name*"
@@ -76,8 +106,8 @@ const EditModalEducation = () => {
             <FormLabel  fontSize={"12px"} color="#949494">Degree*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={edu.degree}
+              name="degree"
               onChange={handleInputChange}
               variant="flushed"
               placeholder="Degree*"
@@ -89,8 +119,8 @@ const EditModalEducation = () => {
             <FormLabel  fontSize={"12px"} color="#949494">Year*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={edu.year}
+              name="year"
               onChange={handleInputChange}
               variant="flushed"
               placeholder="Year*"
@@ -98,15 +128,30 @@ const EditModalEducation = () => {
             />
           </FormControl>
 
+          <FormControl mt={6}>
+            <FormLabel  fontSize={"12px"} color="#949494">Status*</FormLabel>
+            <Input
+              type="text"
+              value={edu.status}
+              name="status"
+              onChange={handleInputChange}
+              variant="flushed"
+              placeholder="Status*"
+              fontSize={18}
+            />
+          </FormControl>
+
         </ModalBody>
 
         <ModalFooter>
-          <Button bg="green" color="white" mr={3}>
+          <Button bg="green" onClick = {handleEdit}  color="white" mr={3}>
           update
           </Button>
           <Button onClick={onClose} color="blue">Cancel</Button>
         </ModalFooter>
+
       </ModalContent>
+
     </Modal>
     </>
   )
