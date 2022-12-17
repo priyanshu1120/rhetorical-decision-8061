@@ -6,13 +6,13 @@ import { MdLogout, MdBook, MdDashboard, MdPerson, MdFormatAlignJustify, } from "
 import { IoBag } from "react-icons/io5";
 import { HiPhone } from "react-icons/hi";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
 
 function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [menu,setMenu]=useState(false)
-    const [register,setRegister]=useState(false)
+    const [menu, setMenu] = useState(false)
+    const [register, setRegister] = useState(false)
     return (
         <>
             <Flex justifyContent="space-between" p="8px 25px 5px 25px" alignItems="center" boxShadow='base' rounded='md' bg='white'>
@@ -64,32 +64,32 @@ function Navbar() {
                                 >
                                     <Icon w="6" h="6" mr="1rem" as={IoBag} /> <p>Jobs</p>
                                 </HStack>
-                                <Box onClick={()=>setMenu(!menu)}>
+                                <Box onClick={() => setMenu(!menu)}>
                                     <Flex _hover={{ backgroundColor: "lightgray" }} padding="1rem" fontWeight="bold" alignItems="center" justifyContent="space-between">
                                         <Flex >
                                             <Icon w="6" h="6" mr="1rem" as={MdBook} />
                                             <p>Courses</p>
                                         </Flex>
-                                        { menu ? 
-                                        <Icon w="5" h="6" mr="1rem" as={IoIosArrowUp} color="blue.400" /> :
-                                        <Icon w="5" h="6" mr="1rem" as={IoIosArrowDown} color="blue.400" /> 
+                                        {menu ?
+                                            <Icon w="5" h="6" mr="1rem" as={IoIosArrowUp} color="blue.400" /> :
+                                            <Icon w="5" h="6" mr="1rem" as={IoIosArrowDown} color="blue.400" />
                                         }
                                     </Flex>
                                     {
-                                        menu ? 
-                                        <Box lineHeight={10} pl="3rem" transition="1s ease-in-out">
-                                            <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
-                                                <Link to="/onlinecourses">
-                                                    <p>Online Courses</p>
-                                                </Link>
+                                        menu ?
+                                            <Box lineHeight={10} pl="3rem" transition="1s ease-in-out">
+                                                <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
+                                                    <Link to="/onlinecourses">
+                                                        <p>Online Courses</p>
+                                                    </Link>
+                                                </Box>
+                                                <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
+                                                    <Link to="/classroomtraning">
+                                                        <p>Classroom Traning</p>
+                                                    </Link>
+                                                </Box>
                                             </Box>
-                                            <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
-                                                <Link to="/classroomtraning">
-                                                    <p>Classroom Traning</p>
-                                                </Link>
-                                            </Box>
-                                        </Box>
-                                        :""
+                                            : ""
                                     }
 
                                 </Box>
@@ -112,32 +112,32 @@ function Navbar() {
                                 </HStack>
                                 <hr />
 
-                                <Box onClick={()=>setRegister(!register)}>
+                                <Box onClick={() => setRegister(!register)}>
                                     <Flex _hover={{ backgroundColor: "lightgray" }} padding="1rem" fontWeight="bold" alignItems="center" justifyContent="space-between">
                                         <Flex >
                                             <Icon w="6" h="6" mr="1rem" as={MdBook} />
                                             <p>Register</p>
                                         </Flex>
-                                        { register ? 
-                                        <Icon w="5" h="6" mr="1rem" as={IoIosArrowUp} color="blue.400" /> :
-                                        <Icon w="5" h="6" mr="1rem" as={IoIosArrowDown} color="blue.400" /> 
+                                        {register ?
+                                            <Icon w="5" h="6" mr="1rem" as={IoIosArrowUp} color="blue.400" /> :
+                                            <Icon w="5" h="6" mr="1rem" as={IoIosArrowDown} color="blue.400" />
                                         }
                                     </Flex>
                                     {
-                                        register ? 
-                                        <Box lineHeight={10} pl="3rem" transition="1s ease-in-out">
-                                            <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
-                                                <Link to="/onlinecourses">
-                                                    <p>Comapany</p>
-                                                </Link>
+                                        register ?
+                                            <Box lineHeight={10} pl="3rem" transition="1s ease-in-out">
+                                                <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
+                                                    <Link to="/onlinecourses">
+                                                        <p>Comapany</p>
+                                                    </Link>
+                                                </Box>
+                                                <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
+                                                    <Link to="/classroomtraning">
+                                                        <p>Student</p>
+                                                    </Link>
+                                                </Box>
                                             </Box>
-                                            <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
-                                                <Link to="/classroomtraning">
-                                                    <p>Student</p>
-                                                </Link>
-                                            </Box>
-                                        </Box>
-                                        :""
+                                            : ""
                                     }
 
                                 </Box>
@@ -155,7 +155,7 @@ function Navbar() {
                         </DrawerContent>
                     </Drawer>
                 </Flex>
-
+                <Box>
                     <Icon
                         width="25px"
                         height="25px"
