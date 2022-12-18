@@ -20,8 +20,8 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/company",companyController);
-app.use(CompanyAuth);
-app.use("/internship",internShipRouter);
+// app.use(CompanyAuth);
+app.use("/internship",CompanyAuth,internShipRouter);
 
 app.use("/studentuser",studentUserRouter)
 app.use("/studentexperience",studentauthentication,experienceRouter)
