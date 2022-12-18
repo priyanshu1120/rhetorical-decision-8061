@@ -22,7 +22,7 @@ import StudentProfile from "../Components/StudentProfile";
 
 const StudentDashboard = () => {
   return (
-    <Box>
+    <Box mb="15">
       <Box backgroundColor={"#df1e2e"} p={3}w="full">
         <Text color="white" fontWeight={600}>
           Please Click Here VERIFY EMAIL & Click Here to VERIFY NUMBER
@@ -32,7 +32,6 @@ const StudentDashboard = () => {
       <Grid
         templateAreas={`"nav main"`}
         gridTemplateColumns={["0px 1fr", "1px 1fr", "1px 1fr", "400px 1fr"]}
-        h="400px"
         gap={["1","1","4"]}
         color="blackAlpha.700"
         fontWeight="bold"
