@@ -13,6 +13,7 @@ import Course from '../Components/Courses/Course'
 import Cart from '../Components/Cart/Cart'
 import Home from '../Components/Home/Home'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import RegisterCompanyProfilePage from '../Pages/RegisterCompanyProfilePage'
 
 const AllRoutes = () => {
   // Ayush
@@ -42,6 +43,7 @@ const AllRoutes = () => {
         <Route path={"/company/login"} element={<CompanyLoginPage />} />
         <Route path={"/internship"} element={<InternShip />} />
         <Route path={"/internship/create"} element={<InternShipCreate/>} />
+        <Route path={"/company/register/profile-details"} element={<RegisterCompanyProfilePage/>} />
         <Route
           path="/courses"
           element={<Course handleAddProduct={handleAddProduct} />}

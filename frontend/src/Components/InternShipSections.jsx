@@ -64,7 +64,7 @@ function InternShipSections() {
           position: "top-right"
         });
         setTimeout(() => {
-          navigate('/company/register');
+          navigate('/company/register/profile-details');
         }, 2000)
       }
     })
