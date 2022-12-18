@@ -53,7 +53,8 @@ const passwordError = input.password === "";
           isClosable: true,
         });
         setTimeout(() => {
-          localStorage.setItem("token",JSON.stringify(` Barer ${res.payload}`))
+          localStorage.setItem("token",JSON.stringify(`Barer ${res.payload.token}`))
+          localStorage.setItem("student",JSON.stringify(res.payload.data))
           navigate("/student/dashboard");
         }, 2000);
       } else {

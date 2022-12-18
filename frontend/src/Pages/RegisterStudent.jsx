@@ -53,6 +53,7 @@ const RegisterStudent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signup({ ...input })).then((res) => {
+      console.log(res)
       if (!res.payload.msg) {
         toast({
           title: "Signup Successful.",
@@ -62,6 +63,7 @@ const RegisterStudent = () => {
           isClosable: true,
         });
         setTimeout(() => {
+          localStorage.setItem("student",JSON.stringify(res.payload))
           navigate("/login/student");
         }, 2000);
       } else {
