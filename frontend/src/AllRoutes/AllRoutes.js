@@ -8,6 +8,7 @@ import CompanyDashboard from '../Pages/CompanyDashboard';
 import CompanyLoginPage from '../Pages/CompanyLoginPage'
 import CompanyRegisterPage from '../Pages/CompanyRegisterPage';
 import InternShip from '../Pages/InternShip'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
 const AllRoutes = () => {
   return (
@@ -15,8 +16,8 @@ const AllRoutes = () => {
         <Routes>
             <Route path="/register/student"  element={<RegisterStudent/>}/>
             <Route path="/login/student"  element={<LoginStudent/>}/>
-            <Route path="/student/dashboard"  element={<StudentDashboard/>}/>
-            <Route path="/profile/student"  element={<StudentApplication/>}/>
+            <Route path="/student/dashboard"  element={<PrivateRoute><StudentDashboard/></PrivateRoute>}/>
+            <Route path="/profile/student"  element={<PrivateRoute><StudentApplication/></PrivateRoute>}/>
             <Route path={"/company/dashboard"} element={<CompanyDashboard/>} />
             <Route path={"/company/register"} element={<CompanyRegisterPage/>} />
              <Route path={"/company/login"} element={<CompanyLoginPage/>} />

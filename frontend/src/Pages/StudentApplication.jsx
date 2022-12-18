@@ -167,7 +167,6 @@ const StudentApplication = () => {
                <Box ml={10} mt="20px" border="2px dashed #e0e0e0" w="90%"></Box>
                <HStack w="90%" ml={10} mt={6} fontSize={24} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  justify={"space-between"}>
                  <Text>Address Details</Text> 
-                 <Box w="40px" h="40px" borderRadius={"50%"} display="flex" alignItems={"center"} justifyContent="center" bg="#087cdd" color="white"><EditAddress/></Box>
                </HStack>
 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"} flexDirection={["column","row"]} justify={"space-between"}>

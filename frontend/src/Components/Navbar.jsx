@@ -1,15 +1,25 @@
-import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, useDisclosure, DrawerContent, HStack, Icon, Image, Flex, Box, Button } from "@chakra-ui/react"
-import { Link } from "react-router-dom";
+import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, useDisclosure, DrawerContent, HStack, Icon, Image, Flex, Box, Button, Text } from "@chakra-ui/react"
+import { Link, useNavigate } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { BsFillCartFill } from "react-icons/bs";
 import { MdLogout, MdBook,MdDashboard,MdPerson,MdFormatAlignJustify,} from "react-icons/md";
 import { IoBag } from "react-icons/io5";
 import { HiPhone } from "react-icons/hi";
 import { BsCurrencyDollar } from "react-icons/bs";
+import { useState } from "react";
 
 
 function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const token = JSON.parse(localStorage.getItem("token"))
+    const [logo,setLogo] = useState(false)
+    const navigate = useNavigate()
+    const handleLog = ()=>{
+         if(token){
+            localStorage.removeItem("token")
+             navigate("/login/student")
+         }
+    }
 
     return (
         <>
@@ -107,21 +117,35 @@ function Navbar() {
                     </Drawer>
                 </Flex>
                
-                <Box >
+                <Box justifyContent={"space-between"}  display='flex'>
                     <Icon
                         width="25px"
                         height="25px"
                         margin="10px 20px 0px "
                         as={BsFillCartFill}
                     />
-                    <Button
+
+                     {
+                        token ? <Box> <Image src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg" alt="profile" 
+                         w="40px"
+                         h="40px" 
+                         borderRadius={"50%"} 
+                         cursor="pointer" 
+                         onClick={()=>setLogo((prev)=>!prev)} />
+                         <Box>{logo?<Text  onClick = {handleLog} cursor="pointer">Logout</Text>:<div></div>}</Box>
+                        </Box>
+                        :
+                        <Button
                         size="sm"
                         margin="-10px 20px 0px 10px"
                         colorScheme="red"
                         variant="solid"
+                        onClick = {handleLog}
                     >
-                        SIGN IN
+                     SIGNIN
                     </Button>
+                     }
+
                 </Box>
             </Flex>
         </>
