@@ -21,7 +21,7 @@ educationRouter.post("/create",async(req,res)=>{
          const data = req.body
          const education = new EducationModel(data)  
           await education.save()
-         res.send("education created successfully")
+         res.send(education)
     }catch(err){
         console.log(err)
      res.send("somthing error in create education")

@@ -20,7 +20,7 @@ experienceRouter.post("/create",async(req,res)=>{
          const data = req.body
          const experience = new ExperienceModel(data)  
           await experience.save()
-         res.send("experience created successfully")
+         res.send(data)
     }catch(err){
         console.log(err)
      res.send("somthing error in create experience")

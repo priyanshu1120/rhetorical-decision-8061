@@ -6,6 +6,7 @@ const experienceSchema = mongoose.Schema({
     jobtitle:{type:String},
     duration:{type:String},
     responsibility:{type:String},
+    status:{type:Boolean},
     userID : {type:String},
 })
 

@@ -22,8 +22,20 @@ import {TbCameraPlus} from "react-icons/tb"
 import {MdEdit} from "react-icons/md"
 import { Link } from "react-router-dom";
 import StudentProfile from "../Components/StudentProfile";
+import {MdAddCircle} from "react-icons/md"
+
+import StudentEducation from "../Components/StudentEducation";
+import StudentExperience from "../Components/StudentExperience";
+import AddModalEducation from "../Components/AddModalEducation";
+import AddExperienceModal from "../Components/AddExperienceModal";
+import EditAddress from "../Components/EditAddress";
+import EditPersonalStudent from "../Components/EditPersonalStudent";
 
 const StudentApplication = () => {
+  const student = JSON.parse(localStorage.getItem("student"))
+  var data = student[0]
+
+
     return (
         <Box>
           <Box backgroundColor={"#df1e2e"} p={3}w="full">
@@ -54,7 +66,7 @@ const StudentApplication = () => {
                          <Box position="absolute" w="40%" h="40%" display="flex" fontSize={24} color="white" justifyContent="center" alignItems="center" top="80px" left="80px" borderRadius="50%" bg="#df1e2e"><TbCameraPlus/></Box>
                        </Box>
                        <Box w={[ "100%","100%","70%"]} h="120px" align={["center","left"]}>
-                           <Text align={["center","center","left"]} ml="20px" fontSize={18}>Priyanshu kaushik</Text>
+                           <Text align={["center","center","left"]} ml="20px" fontSize={18}>{data.firstname} {data.lastname}</Text>
                           <Box mt={[ "10px","25px"]} >
                             <Button   colorScheme={"messenger"} fontSize={[10,14,14,16]} pb="8px" size="sm">View Resume </Button>
                             <Button ml="10px" fontSize={[10,14,14,16]} variant="unstyled" size="sm" pl={2} pr={2}  border="1px solid red">Download Resume</Button>
@@ -70,19 +82,19 @@ const StudentApplication = () => {
                <Box ml={10}  border="2px dashed #e0e0e0" w="90%"></Box>
                <HStack w="90%" ml={10} mt={6} fontSize={24} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  justify={"space-between"}>
                  <Text>Personal Details</Text> 
-                 <Box w="40px" h="40px" borderRadius={"50%"} display="flex" alignItems={"center"} justifyContent="center" bg="#087cdd" color="white"><MdEdit/></Box>
+                 <Box w="40px" h="40px" borderRadius={"50%"} display="flex" alignItems={"center"} justifyContent="center" bg="#087cdd" color="white"><EditPersonalStudent /></Box>
                </HStack>
 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"} flexDirection={["column","row"]} justify={"space-between"}>
                <Heading as='h4' size='sm'>
                    Name
                  </Heading>
-                 <Box w={["70%","45%"]} align={["center","left"]}><Text>Priyanshu kaushik</Text></Box>
+                 <Box w={["70%","45%"]} align={["center","left"]}><Text>{data.firstname} {data.lastname}</Text></Box>
                </HStack>
               
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
                <Heading as='h4' size='sm'>Gender</Heading>
-               <Box w={["70%","45%"]} align={["center","left"]}><Text>Male</Text></Box>
+               <Box w={["70%","45%"]} align={["center","left"]}><Text>{"Male"}</Text></Box>
                </HStack>
                 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
@@ -131,12 +143,12 @@ const StudentApplication = () => {
                <Heading as='h4' size='sm'>
                Email ID
                  </Heading>
-                 <Box w={["70%","45%"]} align={["center","left"]}><Text>Priyanshu kaushik</Text></Box>
+                 <Box w={["70%","45%"]} align={["center","left"]}><Text>{data.email}</Text></Box>
                </HStack>
               
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
-               <Heading as='h4' size='sm'>Mobile Number</Heading>
-               <Box w={["70%","45%"]} align={["center","left"]}><Text>Male</Text></Box>
+               <Heading as='h4' size='sm'>mobile</Heading>
+               <Box w={["70%","45%"]} align={["center","left"]}><Text>{data.mobile}</Text></Box>
                </HStack>
                 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
@@ -155,7 +167,7 @@ const StudentApplication = () => {
                <Box ml={10} mt="20px" border="2px dashed #e0e0e0" w="90%"></Box>
                <HStack w="90%" ml={10} mt={6} fontSize={24} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  justify={"space-between"}>
                  <Text>Address Details</Text> 
-                 <Box w="40px" h="40px" borderRadius={"50%"} display="flex" alignItems={"center"} justifyContent="center" bg="#087cdd" color="white"><MdEdit/></Box>
+                 <Box w="40px" h="40px" borderRadius={"50%"} display="flex" alignItems={"center"} justifyContent="center" bg="#087cdd" color="white"><EditAddress/></Box>
                </HStack>
 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"} flexDirection={["column","row"]} justify={"space-between"}>
@@ -180,11 +192,24 @@ const StudentApplication = () => {
                <Box w={["70%","45%"]} align={["center","left"]}><Text>English</Text></Box>
                </HStack>
             
-               <Box ml={10}  border="2px dashed #e0e0e0" w="90%"></Box>
+               <Box ml={10}  mt="20px" border="2px dashed #e0e0e0" w="90%"></Box>
 
-            <SimpleGrid columns="2" w="90%"  ml={10} border="none">
-                <Box  borderRight ="1px solid green"><Box w={"60%"} h={800}>1</Box></Box>
-                <Box  borderLeft="1px solid green"></Box>
+            <SimpleGrid columns={[1,1,2]} w="90%" mt="30px" ml={10} border="none">
+                <Box  borderRight ="1px solid green" p={[2]}>
+                   <HStack w={["98%","98%","90%"]} justify="space-between"  >
+                   <Heading as='h1' fontWeight={[400]} fontSize={[24]}>Education Detail</Heading>
+                      <HStack w="40px" h="40px" borderRadius={"50%"} display="flex" justifyContent={"center"} alignItem="center" bg="#087cdd" color="white" fontSize={24}><AddModalEducation /></HStack>
+                   </HStack>
+                   
+                   <StudentEducation/>
+                </Box>
+                <Box  borderLeft="1px solid green" p={[2]} pl={[2,2,8]}>
+                <HStack w={["98%","98%","98%"]} justify="space-between"  >
+                   <Heading as='h1' fontWeight={[400]} fontSize={[24]}>Experience Detail</Heading>
+                      <HStack w="40px" h="40px" borderRadius={"50%"} display="flex" justifyContent={"center"} alignItem="center" bg="#087cdd" color="white" fontSize={24}><AddExperienceModal /></HStack>
+                   </HStack>
+                   <StudentExperience/>
+                </Box>
             </SimpleGrid>
 
             </Box>
