@@ -56,6 +56,7 @@ function InternShipSections() {
   const handleSubmit = () => {
     dispatch(postInternShip({ internShipForm, token })).then((res) => {
       if (res.payload){
+        console.log(res);
         toast({
           title: "Your internship got Added",
           status: "success",
@@ -75,7 +76,7 @@ function InternShipSections() {
   return (
     <>
       <Box boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px" width={"60%"} margin={"auto"} p={10} marginTop={"5rem"}>
-        <form onClick={handleSubmit}>
+        {/* <form > */}
 
           <Steps orientation="vertical" activeStep={activeStep} >
             <Step label="Section 1: What Kind Of An Internship Are You Offering?" >
@@ -297,9 +298,9 @@ function InternShipSections() {
           <Flex>
             {activeStep !== 0 && <Button onClick={prevStep}>Previous</Button>}
             {activeStep !== 2 && <Button onClick={nextStep}>Next</Button>}
-            {activeStep === 2 && <Button type="submit" >Submit</Button>}
+            {activeStep === 2 && <Button onClick={handleSubmit} type="submit" >Submit</Button>}
           </Flex>
-        </form>
+        {/* </form> */}
       </Box>
     </>
   )
