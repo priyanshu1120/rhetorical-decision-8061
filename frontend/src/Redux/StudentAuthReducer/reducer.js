@@ -4,6 +4,7 @@ const initialState = {
     isLoading:false,
     isERROR:false,
     token:"",
+    data:[]
     
 }
 
@@ -27,6 +28,16 @@ const reducer = (state=initialState,{type,payload})=>{
             }
         } 
 
+        case  Types.SIGNUP_GET_SUCCESS : {
+            return {
+                ...state,
+                isLoading:false,
+                isError:false,
+                data:payload
+            }
+        } 
+      
+         
         
         case  Types.LOGIN_STUDENT_SUCCESS : {
             return {
