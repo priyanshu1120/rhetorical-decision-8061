@@ -8,6 +8,7 @@ import CompanyDashboard from '../Pages/CompanyDashboard';
 import CompanyLoginPage from '../Pages/CompanyLoginPage'
 import CompanyRegisterPage from '../Pages/CompanyRegisterPage';
 import InternShip from '../Pages/InternShip'
+import InternShipCreate from '../Pages/InternShipCreate'
 import Course from '../Components/Courses/Course'
 import Cart from '../Components/Cart/Cart'
 import Home from '../Components/Home/Home'
@@ -39,6 +40,7 @@ const AllRoutes = () => {
         <Route path={"/company/register"} element={<CompanyRegisterPage />} />
         <Route path={"/company/login"} element={<CompanyLoginPage />} />
         <Route path={"/internship"} element={<InternShip />} />
+        <Route path={"/internship/create"} element={<InternShipCreate/>} />
         <Route
           path="/courses"
           element={<Course handleAddProduct={handleAddProduct} />}
