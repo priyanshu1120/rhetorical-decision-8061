@@ -50,7 +50,7 @@ companyController.post("/login", async (req, res) => {
             //   console.log(hashed_password);
               bcrypt.compare(password, hashed_password, function (err, result) {
               if (result) {
-                      const token = jwt.sign({ userID: user[0]._id }, `${process.env.KEY}`);
+                      const token = jwt.sign({ userID: user[0]._id , email : email }, `${process.env.KEY}`);
                           res.send({ msg: "Login successfull", token: token });
               } else {
                           res.send("authentication failed");

@@ -13,6 +13,10 @@ const CompanyAuth = (req, res, next) => {
             else{
                 const userID = decoded.userID
                req.body.userID = userID
+
+               const email = decoded.email
+               req.body.email = email;
+
                next()
             }
         });
