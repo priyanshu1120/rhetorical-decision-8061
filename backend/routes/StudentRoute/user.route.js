@@ -6,18 +6,30 @@ var jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 
-studentUserRouter.get("/profile", async(req,res)=>{
-     
-          try{
-                let data = await UserModel.find()
-                res.send(data)
-          }catch(err){
-            console.log(err)
-            res.send(err)
-          }  
+
+studentUserRouter.get("/:id", async(req,res)=>{
+     let id = req.params.id
+  try{
+        let data = await UserModel.find({_id:id})
+        res.send(data)
+  }catch(err){
+    console.log(err)
+    res.send(err)
+  }  
 })   
 
+studentUserRouter.patch("/:id",async(req,res)=>{
+  let id = req.params.id
+  let userdata = req.body
+  let data = await UserModel.findByIdAndUpdate({_id:id},userdata)
 
+  if(data){ 
+       res.send(data)
+  }else{
+    res.send("user not updated")
+  }
+   
+})
 
 
 
