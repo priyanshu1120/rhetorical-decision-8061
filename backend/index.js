@@ -13,16 +13,17 @@ const {studentauthentication} = require("./middlewares/studentauthentication")
 const {experienceRouter} = require("./routes/StudentRoute/experience.route");
 const { companyController } = require("./routes/AdminRoute/company.route");
 const { CompanyAuth } = require("./middlewares/company.auth");
-const {educationRouter} = require("./routes/StudentRoute/education.route")
+const {educationRouter} = require("./routes/StudentRoute/education.route");
+const { internShipRouter } = require("./routes/AdminRoute/internship.route");
 app.get("/",(req,res)=>{
     res.send("server run successfully")
 })
 
 app.use("/company",companyController);
-// app.use(CompanyAuth)
+app.use(CompanyAuth);
+app.use("/internship",internShipRouter);
 
 app.use("/studentuser",studentUserRouter)
-app.use(studentauthentication)
 app.use("/studentexperience",studentauthentication,experienceRouter)
 app.use("/studenteducation",studentauthentication,educationRouter)
 

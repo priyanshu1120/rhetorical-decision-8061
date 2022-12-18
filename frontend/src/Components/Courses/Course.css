@@ -1,0 +1,19 @@
+        .btn  {
+            text-decoration: none;
+            padding: 1em 2em;
+            display: inline-block;
+            color: white;
+
+        }
+
+          .btn-awesome {
+            background: rgb(36,149,146);
+            box-shadow: 0 2px 3px -2px rgba(0,0,0,.75);
+            color: white;
+            transition: all ease-in-out 250ms;
+
+        }  
+        .btn-awesome:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 3px -10px rgba(0,0,0,1);
+        }

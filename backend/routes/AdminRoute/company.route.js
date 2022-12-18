@@ -47,7 +47,7 @@ companyController.post("/login", async (req, res) => {
           let user = await CompanyModel.find({ email });
           if (user.length > 0) {
               const hashed_password = user[0].password;
-              console.log(hashed_password);
+            //   console.log(hashed_password);
               bcrypt.compare(password, hashed_password, function (err, result) {
               if (result) {
                       const token = jwt.sign({ userID: user[0]._id }, `${process.env.KEY}`);
