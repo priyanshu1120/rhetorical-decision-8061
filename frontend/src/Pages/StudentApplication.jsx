@@ -30,6 +30,7 @@ import AddModalEducation from "../Components/AddModalEducation";
 import AddExperienceModal from "../Components/AddExperienceModal";
 import EditAddress from "../Components/EditAddress";
 import EditPersonalStudent from "../Components/EditPersonalStudent";
+import Footer from "../Components/Courses/Footer";
 
 const StudentApplication = () => {
   const student = JSON.parse(localStorage.getItem("student"))
@@ -37,17 +38,16 @@ const StudentApplication = () => {
 
 
     return (
-        <Box>
+        <Box mb={15}>
           <Box backgroundColor={"#df1e2e"} p={3}w="full">
             <Text color="white" fontWeight={600}>
               Please Click Here VERIFY EMAIL & Click Here to VERIFY NUMBER
             </Text>
           </Box>
-    
+       
           <Grid
             templateAreas={`"nav main"`}
             gridTemplateColumns={["0px 1fr", "1px 1fr", "1px 1fr", "400px 1fr"]}
-            h="400px"
             gap={["1","1","4"]}
             color="blackAlpha.700"
             fontWeight="bold"
@@ -214,6 +214,7 @@ const StudentApplication = () => {
             </Box>
             </GridItem>
           </Grid>
+        
         </Box>
       );
 }

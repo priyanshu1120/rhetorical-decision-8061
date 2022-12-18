@@ -28,7 +28,7 @@ function Navbar() {
         <>
             <Flex justifyContent="space-between" p="8px 25px 5px 25px" alignItems="center" boxShadow='base' rounded='md' bg='white'>
                 <Flex gap={5}>
-                    <HamburgerIcon onClick={onOpen} _hover={{ backgroundColor: "lightgray" }} padding="5px" boxSize={10} borderRadius='full' />
+                    <HamburgerIcon onClick={onOpen} _hover={{ backgroundColor: "lightgray" }} cursor="pointer" padding="5px" boxSize={10} borderRadius='full' />
                     <Link to="/"> <Image w="150px" h="60px" src="/InternLogo.png" /> </Link>
                     
                     <Drawer placement='left' onClose={onClose} isOpen={isOpen} >
@@ -47,7 +47,7 @@ function Navbar() {
                                     // border="1px solid red"
                                     fontWeight="bold"
                                 >
-                                    <Icon w="6" h="6" mr="1rem" as={MdDashboard} /> <p>Dashboard</p>
+                                    <Icon w="6" h="6" mr="1rem" as={MdDashboard} /> <Link to="/student/dashboard">Dashboard</Link>
                                 </HStack>
                                 <HStack
                                     _hover={{ backgroundColor: "lightgray" }}
@@ -55,7 +55,7 @@ function Navbar() {
                                     // border="1px solid red"
                                     fontWeight="bold"
                                 >
-                                    <Icon w="6" h="6" mr="1rem" as={MdPerson} /> <p>Profile</p>
+                                    <Icon w="6" h="6" mr="1rem" as={MdPerson} /> <Link to="/profile/student">Profile</Link>
                                 </HStack>
                                 <HStack
                                     _hover={{ backgroundColor: "lightgray" }}
@@ -155,10 +155,9 @@ function Navbar() {
                                 <HStack
                                     _hover={{ backgroundColor: "lightgray" }}
                                     padding="1rem"
-                                    // border="1px solid red"
                                     fontWeight="bold"
                                 >
-                                    <Icon w="6" h="6" mr="1rem" as={MdLogout} /> <p>Logout</p>
+                                    <Icon w="6" h="6" mr="1rem" as={MdLogout} /> {token?<Text  onClick = {handleLog} cursor="pointer">Logout</Text>:<Text cursor="pointer">Login</Text>}
                                 </HStack>
                             </DrawerBody>
 

@@ -3,17 +3,30 @@ import { Image } from '@chakra-ui/image'
 import { Box, VStack,Text  } from '@chakra-ui/layout'
 import React, { useEffect, useState } from 'react'
 
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const StudentProfile = () => {
     const [size, setSize] = useState(window.innerWidth);
+    const [text,setText] = useState(false)
+  const navigate = useNavigate()
+    const location=useLocation()
+    const path = location.pathname
   const updateSize = () =>
     setSize(window.innerWidth);
   useEffect(() => (window.onresize = updateSize), []);
   const student = JSON.parse(localStorage.getItem("student"))
   var data = student[0]
 
+const handleClick = ()=>{
+      setText((prev)=>!prev)
 
+}
+
+// if(text==true){
+//      navigate("/profile/student")
+// }else{
+//   navigate("/student/dashboard")
+// }
 
   return (
      <Box>
@@ -24,7 +37,8 @@ const StudentProfile = () => {
          
          <VStack >
              <Image src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg" alt="" w="100px" h="100px"/>
-            <Link to ="/profile/student"><Button colorScheme='messenger' size="xs">MY PROFILE</Button></Link>
+          {path=="/student/dashboard" ?<Button colorScheme='messenger' onClick={()=>navigate("/profile/student")} size="xs" >MY PROFILE</Button>
+          :<Button colorScheme='messenger'  size="xs" onClick={()=>navigate("/student/dashboard")}>DASHBOARD</Button> } 
             <Text>{data.firstname} {data.lastname}</Text>
             <Box w="250px" border="1px solid #999999"></Box>
             <Text>{data.email}</Text>
