@@ -44,6 +44,7 @@ const passwordError = input.password === "";
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(input)).then((res) => {
+      console.log(res)
       if (res.payload!==undefined) {
         toast({
           title: "Login Successful.",
@@ -66,7 +67,6 @@ const passwordError = input.password === "";
           isClosable: true,
         });
       }
-      console.log(res);
     });
   };
 

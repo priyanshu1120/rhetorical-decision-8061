@@ -12,6 +12,7 @@ import InternShipCreate from '../Pages/InternShipCreate'
 import Course from '../Components/Courses/Course'
 import Cart from '../Components/Cart/Cart'
 import Home from '../Components/Home/Home'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
 const AllRoutes = () => {
   // Ayush
@@ -34,8 +35,8 @@ const AllRoutes = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/register/student" element={<RegisterStudent />} />
         <Route path="/login/student" element={<LoginStudent />} />
-        <Route path="/student/dashboard" element={<StudentDashboard />} />
-        <Route path="/profile/student" element={<StudentApplication />} />
+        <Route path="/student/dashboard" element={<PrivateRoute><StudentDashboard /></PrivateRoute>} />
+        <Route path="/profile/student" element={<PrivateRoute><StudentApplication /></PrivateRoute>} />
         <Route path={"/company/dashboard"} element={<CompanyDashboard />} />
         <Route path={"/company/register"} element={<CompanyRegisterPage />} />
         <Route path={"/company/login"} element={<CompanyLoginPage />} />
