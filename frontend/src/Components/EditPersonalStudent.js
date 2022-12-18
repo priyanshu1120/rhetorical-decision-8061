@@ -4,19 +4,20 @@ import { useDisclosure } from '@chakra-ui/hooks'
 import { Input } from '@chakra-ui/input'
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/modal'
 import { Radio, RadioGroup, Stack, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {MdModeEdit} from "react-icons/md"
+import { useDispatch } from 'react-redux'
+import { getUser, updateUser } from '../Redux/StudentAuthReducer/action'
 
 const eduObj = {
   firstname: "",
   lastname: "",
-  email: "",
-  mobile: "",
-  password: "",
   city: "",
-  preference: "",
-  category: "",
-  find: "",
+  langauge: "",
+  skill:"",
+  state:"",
+  about:"",
+  dob:""
 };
 
 
@@ -26,12 +27,28 @@ const EditPersonalStudent = () => {
     const initialRef = React.useRef(null)
     const [input, setInput] = useState(eduObj);
     const [scrollBehavior, setScrollBehavior] = React.useState('inside')
+    const dispatch = useDispatch()
+    const student = JSON.parse(localStorage.getItem("student"))
+    var data = student[0]
+ var id = data._id
 
-    const mobileError = input.mobile === "";
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setInput({ ...input, [name]: value });
       };
+
+
+const edit=()=>{
+    dispatch(updateUser({input,id})).then((res)=>{
+        dispatch(getUser(id))
+        
+    }) 
+   
+} 
+
+useEffect(()=>{
+  dispatch(getUser(id))
+},[])
 
 
   return (
@@ -58,54 +75,93 @@ const EditPersonalStudent = () => {
         <ModalHeader><Text fontSize={24}>Personal Details</Text></ModalHeader>
         <ModalBody pb={6}>
           <FormControl>
-            <FormLabel fontSize={"12px"} color="#949494">Experience Type*</FormLabel>
+            <FormLabel fontSize={"12px"} color="#949494">FirstName*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={input.firstname}
+              name="firstname"
               onChange={handleInputChange}
               variant="flushed"
-              placeholder="Experience Type*"
+              placeholder="first name*"
               fontSize={18}
             />
           
           </FormControl>
 
           <FormControl mt={6}>
-            <FormLabel  fontSize={"12px"} color="#949494">Title/JobRole*</FormLabel>
+            <FormLabel  fontSize={"12px"} color="#949494">LastName*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={input.lastname}
+              name="lastname"
               onChange={handleInputChange}
               variant="flushed"
-              placeholder="JobRole*"
+              placeholder="last name*"
               fontSize={18}
             />
           </FormControl>
 
           <FormControl mt={6}>
-            <FormLabel  fontSize={"12px"} color="#949494">Experience in (month)*</FormLabel>
+            <FormLabel  fontSize={"12px"} color="#949494">skill*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={input.skill}
+              name="skill"
               onChange={handleInputChange}
               variant="flushed"
-              placeholder="Experience*"
+              placeholder="skill*"
               fontSize={18}
             />
           </FormControl>
 
           <FormControl mt={6}>
-            <FormLabel  fontSize={"12px"} color="#949494">Responsibility*</FormLabel>
+            <FormLabel  fontSize={"12px"} color="#949494">langauge*</FormLabel>
             <Input
               type="text"
-              value={input.mobile}
-              name="mobile"
+              value={input.langauge}
+              name="langauge"
               onChange={handleInputChange}
               variant="flushed"
-              placeholder="Responsibility*"
+              placeholder="language*"
+              fontSize={18}
+            />
+          </FormControl>
+
+          
+          <FormControl mt={6}>
+            <FormLabel  fontSize={"12px"} color="#949494">about*</FormLabel>
+            <Input
+              type="text"
+              value={input.about}
+              name="about"
+              onChange={handleInputChange}
+              variant="flushed"
+              placeholder="about*"
+              fontSize={18}
+            />
+          </FormControl>
+
+          <FormControl mt={6}>
+            <FormLabel  fontSize={"12px"} color="#949494">dob*</FormLabel>
+            <Input
+              type="text"
+              value={input.dob}
+              name="dob"
+              onChange={handleInputChange}
+              variant="flushed"
+              placeholder="dob*"
+              fontSize={18}
+            />
+          </FormControl>
+          <FormControl mt={6}>
+            <FormLabel  fontSize={"12px"} color="#949494">dob*</FormLabel>
+            <Input
+              type="text"
+              value={input.state}
+              name="state"
+              onChange={handleInputChange}
+              variant="flushed"
+              placeholder="dob*"
               fontSize={18}
             />
           </FormControl>
@@ -113,7 +169,7 @@ const EditPersonalStudent = () => {
         </ModalBody>
 
         <ModalFooter>
-          <Button bg="green" color="white" mr={3}>
+          <Button bg="green" onClick={edit} color="white" mr={3}>
           update
           </Button>
           <Button onClick={onClose} color="blue">Cancel</Button>

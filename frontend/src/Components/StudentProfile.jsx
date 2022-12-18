@@ -2,8 +2,10 @@ import { Button } from '@chakra-ui/button'
 import { Image } from '@chakra-ui/image'
 import { Box, VStack,Text  } from '@chakra-ui/layout'
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { getUser } from '../Redux/StudentAuthReducer/action'
 
 const StudentProfile = () => {
     const [size, setSize] = useState(window.innerWidth);
@@ -11,22 +13,34 @@ const StudentProfile = () => {
   const navigate = useNavigate()
     const location=useLocation()
     const path = location.pathname
+    const dispatch = useDispatch()
+    const user = useSelector((store)=>store.StudentAuthReducer)
+   const userdata = user.data
+   const newdata = userdata[0]
+
+    const student = JSON.parse(localStorage.getItem("student"))
+    var data = student[0]
+ var id = data._id
+
+
+    useEffect(()=>{
+      dispatch(getUser(data._id))
+    },[])
+    
+
+
+
   const updateSize = () =>
     setSize(window.innerWidth);
   useEffect(() => (window.onresize = updateSize), []);
-  const student = JSON.parse(localStorage.getItem("student"))
-  var data = student[0]
+
 
 const handleClick = ()=>{
       setText((prev)=>!prev)
 
 }
 
-// if(text==true){
-//      navigate("/profile/student")
-// }else{
-//   navigate("/student/dashboard")
-// }
+
 
   return (
      <Box>
@@ -37,12 +51,11 @@ const handleClick = ()=>{
          
          <VStack >
              <Image src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg" alt="" w="100px" h="100px"/>
-          {path=="/student/dashboard" ?<Button colorScheme='messenger' onClick={()=>navigate("/profile/student")} size="xs" >MY PROFILE</Button>
-          :<Button colorScheme='messenger'  size="xs" onClick={()=>navigate("/student/dashboard")}>DASHBOARD</Button> } 
-            <Text>{data.firstname} {data.lastname}</Text>
+          {path=="/student/dashboard" ?<Button colorScheme='messenger' onClick={()=>navigate("/profile/student")} size="xs" >MY PROFILE</Button>:<Button colorScheme='messenger' size="xs" onClick={()=>navigate("/student/dashboard")}>DASHBOARD</Button> } 
+            <Text>{newdata?.firstname} {newdata?.lastname}</Text>
             <Box w="250px" border="1px solid #999999"></Box>
-            <Text>{data.email}</Text>
-            <Text>+91 {data.mobile}</Text>
+            <Text>{newdata?.email}</Text>
+            <Text>+91 {newdata?.mobile}</Text>
          </VStack>
     </Box>):(<Box></Box>)
 
