@@ -168,12 +168,12 @@ function Navbar() {
                 </Flex>
                
                 <Box justifyContent={"space-between"}  display='flex'>
-                    <Icon
+                    <Link to="/cart"><Icon
                         width="25px"
                         height="25px"
                         margin="10px 20px 0px "
                         as={BsFillCartFill}
-                    />
+                    /></Link>
 
                      {
                         token ? <Box> <Image src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg" alt="profile" 

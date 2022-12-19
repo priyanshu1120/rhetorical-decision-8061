@@ -109,10 +109,11 @@ function CompanyLoginForm() {
             <Input
               variant="flushed"
               placeholder="Password *"
-              type={"text"}
+              type={"password"}
               marginBottom={"0.5rem"}
               name="password"
               value={form.password}
+
               onChange={handleInputChange}
             />
           </Box>
