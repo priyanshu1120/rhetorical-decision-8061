@@ -5,7 +5,7 @@ const Pro = () => {
   return (
     <>
       <Box
-        bg="teal.400"
+        bg="#f7fcfe"
         width={[
           "100%", // 0-30em
           "50%", // 30em-48em
@@ -46,7 +46,7 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/HR.jpg"
                 alt=""
               />
             </Box>
@@ -58,7 +58,7 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/BD.jpg"
                 alt=""
               />
             </Box>
@@ -70,7 +70,7 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/Content-Writing.jpg"
                 alt=""
               />
             </Box>
@@ -82,7 +82,7 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/Graphic.jpg"
                 alt=""
               />
             </Box>
@@ -94,7 +94,7 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/Finance.jpg"
                 alt=""
               />
             </Box>
@@ -106,7 +106,7 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/HR.jpg"
                 alt=""
               />
             </Box>
@@ -118,16 +118,12 @@ const Pro = () => {
                   "25%", // 48em-62em
                   "80%", // 62em+
                 ]}
-                src="https://assets.interntheory.com/creative/home-internships/Marketing-Icon.jpg"
+                src="https://assets.interntheory.com/creative/home-internships/Eng.jpg"
                 alt=""
               />
             </Box>
           </SimpleGrid>
         </Center>
-
-
-
-        
       </Box>
     </>
   );
