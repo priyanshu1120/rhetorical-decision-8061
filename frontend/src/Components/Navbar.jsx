@@ -22,6 +22,8 @@ function Navbar() {
             localStorage.removeItem("token")
              navigate("/login/student")
          }
+         navigate("/login/student")
+         
     }
 
     return (
@@ -91,12 +93,12 @@ function Navbar() {
                                         menu ? 
                                         <Box lineHeight={10} pl="3rem" transition="1s ease-in-out">
                                             <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
-                                                <Link to="//courses">
+                                                <Link to="/courses">
                                                     <p>Online Courses</p>
                                                 </Link>
                                             </Box>
                                             <Box _hover={{ backgroundColor: "lightgray" }} fontWeight="bold" >
-                                                <Link to="/classroomtraning">
+                                                <Link to="/courses">
                                                     <p>Classroom Traning</p>
                                                 </Link>
                                             </Box>

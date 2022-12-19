@@ -45,7 +45,7 @@ const passwordError = input.password === "";
     e.preventDefault();
     dispatch(login(input)).then((res) => {
       console.log(res)
-      if (res.payload!==undefined) {
+      if (res.payload!=="authentication failed") {
         toast({
           title: "Login Successful.",
           description: "Welcome to Dashboard!",
@@ -193,7 +193,7 @@ const passwordError = input.password === "";
             placeholder="Email*"
             variant="flushed"
             fontSize={18}
-            isRequired
+            required
           />
           {!emailError ? (
             <FormHelperText></FormHelperText>
@@ -211,7 +211,7 @@ const passwordError = input.password === "";
             variant="flushed"
             placeholder="Password*"
             fontSize={18}
-            isRequired
+            required
           />
           {!passwordError ? (
             <FormHelperText></FormHelperText>
