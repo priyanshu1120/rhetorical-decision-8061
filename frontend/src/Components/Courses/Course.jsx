@@ -37,7 +37,7 @@ const Course = ({ handleAddProduct }) => {
               "900px", // 48em-62em
               "1200px", // 62em+
             ]}
-            border="1px solid red"
+     
             p={["0", "1rem", "2rem", "1rem"]}
             pr={["2rem", 0, 0, 0]}
             pl={["2rem", 0, 0, 0]}
@@ -47,7 +47,7 @@ const Course = ({ handleAddProduct }) => {
         </Center>
       </Box>
 
-      <Box border="1px solid red">
+      <Box >
         <Text ml={["2rem", "2rem", "1rem", "10rem"]} align="left">
           Certified Online Courses
         </Text>
@@ -161,7 +161,7 @@ const Course = ({ handleAddProduct }) => {
         ))}
       </SimpleGrid>
 
-      <Box border="1px solid red" bg="#df1e2e">
+      <Box  bg="#df1e2e">
         <Text noOfLines={[6, 4, 2]} ml="auto" align="center">
           Use Coupon Code FIRSTCOURSE to avail a discount of 20% on your course
           enrolment. Offer expires in
