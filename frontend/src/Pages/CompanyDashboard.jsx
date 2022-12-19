@@ -2,7 +2,7 @@ import React from 'react'
 
 function CompanyDashboard() {
   return (
-    <div>CompanyDashboard</div>
+    <div>Here will be my Dashboard data right now it is empty but very soon there will be some relevent data</div>
   )
 }
 

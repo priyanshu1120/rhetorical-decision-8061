@@ -33,7 +33,7 @@ function CompanyLoginForm() {
         });
         setTimeout(() => {
           localStorage.setItem("token", JSON.stringify(` Bearer ${res.payload}`))
-          navigate("/company/dashboard");
+          navigate("/internship/create");
         }, 2000);
       } else {
         toast({
