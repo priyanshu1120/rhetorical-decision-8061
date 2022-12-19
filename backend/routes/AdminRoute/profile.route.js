@@ -12,6 +12,12 @@ profileRouter.get("/", async (req, res) => {
     res.send(profile)
 })
 
+profileRouter.get("/all-data", async (req, res) => {
+    // const {tag} = req.query;
+    const profile = await CompanyProfileModel.find()
+    res.send(profile)
+})
+
 profileRouter.post("/create", async (req, res) => {
     const {company_logo,company_name,website,industry,about_comapny,address,city,pincode,company_size,userID} = req.body;
     // const {} = req.body;
