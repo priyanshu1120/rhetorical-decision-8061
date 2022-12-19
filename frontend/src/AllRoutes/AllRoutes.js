@@ -14,6 +14,8 @@ import Cart from '../Components/Cart/Cart'
 import Home from '../Components/Home/Home'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import RegisterCompanyProfilePage from '../Pages/RegisterCompanyProfilePage'
+import Checkout from "../Components/checkout/Checkout"
+
 
 const AllRoutes = () => {
   // Ayush
@@ -52,6 +54,7 @@ const AllRoutes = () => {
           path="/cart"
           element={<Cart item={cartItems} handleCartClear={handleCartClear} />}
         />
+        <Route path="/checkout" element={<Checkout/>}/>
       </Routes>
     </div>
   );
