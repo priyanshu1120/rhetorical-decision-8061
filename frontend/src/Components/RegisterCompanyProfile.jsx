@@ -53,7 +53,7 @@ function RegisterCompanyProfile() {
             <Stack boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px" width={"60%"} margin={"auto"} p={10} marginTop={"5rem"} marginBottom={"5rem"} >
             <Heading as={"h1"} size={"lg"}>Last Step! Few Details About Your Company!</Heading>
             <Text>This is a one time procedure to establish the validity of your company.</Text>
-            <form onClick={handleSubmit} >
+            <form  >
 
                 <HStack display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
                     <Text width={"20%"} color={"gray"}>Company Logo</Text>
@@ -150,7 +150,7 @@ function RegisterCompanyProfile() {
                         <option value="500++">500++</option>
                     </Select>
                 </HStack>
-                <Button type={"submit"} margin={"auto"} >Submit</Button>
+                <Button type={"submit"} margin={"auto"} onClick={handleSubmit} >Submit</Button>
             </form>
             </Stack>
         </>
