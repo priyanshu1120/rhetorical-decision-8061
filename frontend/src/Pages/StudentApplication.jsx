@@ -116,7 +116,7 @@ useEffect(()=>{
 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
                <Heading as='h4' size='sm'>Languages</Heading>
-               <Box w={["70%","45%"]} align={["center","left"]}><Text>{newdata?.langauge}</Text></Box>
+               <Box w={["70%","45%"]} align={["center","left"]}><Text>{newdata?.language}</Text></Box>
                </HStack>
 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
@@ -165,7 +165,7 @@ useEffect(()=>{
                 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>
                <Heading as='h4' size='sm'>Facebook Account</Heading>
-               <Box w={["70%","45%"]} align={["center","left"]}><Text>1998-06-12</Text></Box>
+               <Box w={["70%","45%"]} align={["center","left"]}><Text>{newdata?.facebook}</Text></Box>
                </HStack>
 
                <HStack w={["80%","30%"]} ml={10} mt={2} fontSize={14} fontWeight={400} fontFamily={"Roboto, Helvetica, Arial, sans-serif"}  flexDirection={["column","row"]} justify={"space-between"}>

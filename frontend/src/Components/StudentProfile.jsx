@@ -20,11 +20,11 @@ const StudentProfile = () => {
 
     const student = JSON.parse(localStorage.getItem("student"))
     var data = student[0]
- var id = data._id
+ var id = data?._id
 
 
     useEffect(()=>{
-      dispatch(getUser(data._id))
+      dispatch(getUser(id))
     },[])
     
 

@@ -13,11 +13,12 @@ const eduObj = {
   firstname: "",
   lastname: "",
   city: "",
-  langauge: "",
+  language: "",
   skill:"",
   state:"",
   about:"",
-  dob:""
+  dob:"",
+  pincode:""
 };
 
 
@@ -41,7 +42,7 @@ const EditPersonalStudent = () => {
 const edit=()=>{
     dispatch(updateUser({input,id})).then((res)=>{
         dispatch(getUser(id))
-        
+        onClose() 
     }) 
    
 } 
@@ -101,6 +102,20 @@ useEffect(()=>{
             />
           </FormControl>
 
+          
+          <FormControl mt={6}>
+            <FormLabel  fontSize={"12px"} color="#949494">City*</FormLabel>
+            <Input
+              type="text"
+              value={input.city}
+              name="city"
+              onChange={handleInputChange}
+              variant="flushed"
+              placeholder="city*"
+              fontSize={18}
+            />
+          </FormControl>
+
           <FormControl mt={6}>
             <FormLabel  fontSize={"12px"} color="#949494">skill*</FormLabel>
             <Input
@@ -115,11 +130,11 @@ useEffect(()=>{
           </FormControl>
 
           <FormControl mt={6}>
-            <FormLabel  fontSize={"12px"} color="#949494">langauge*</FormLabel>
+            <FormLabel  fontSize={"12px"} color="#949494">language*</FormLabel>
             <Input
               type="text"
-              value={input.langauge}
-              name="langauge"
+              value={input.language}
+              name="language"
               onChange={handleInputChange}
               variant="flushed"
               placeholder="language*"
@@ -154,14 +169,27 @@ useEffect(()=>{
             />
           </FormControl>
           <FormControl mt={6}>
-            <FormLabel  fontSize={"12px"} color="#949494">dob*</FormLabel>
+            <FormLabel  fontSize={"12px"} color="#949494">state*</FormLabel>
             <Input
               type="text"
               value={input.state}
               name="state"
               onChange={handleInputChange}
               variant="flushed"
-              placeholder="dob*"
+              placeholder="state*"
+              fontSize={18}
+            />
+          </FormControl>
+
+          <FormControl mt={6}>
+            <FormLabel  fontSize={"12px"} color="#949494">pincode*</FormLabel>
+            <Input
+              type="number"
+              value={input.pincode}
+              name="pincode"
+              onChange={handleInputChange}
+              variant="flushed"
+              placeholder="pincode*"
               fontSize={18}
             />
           </FormControl>
