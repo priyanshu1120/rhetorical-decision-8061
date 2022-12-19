@@ -19,9 +19,9 @@ export const getProfile = (header) => (dispatch) => {
   
   export const postProfile = (payload) => (dispatch) => {
     dispatch({ type: Types.POST_PROFILE_LOADIING });
-  
+
     return axios.post(
-      "https://intern-hub-api.up.railway.app/profile-details/create",payload.profile,{
+      "https://intern-hub-api.up.railway.app/profile-details/create",payload.profie,{
         headers: {
           authorization: payload.token,
         },
