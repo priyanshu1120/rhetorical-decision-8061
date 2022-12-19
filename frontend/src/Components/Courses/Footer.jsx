@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Box bg="#446478" color="white">
+    <Box bg="#446478" color="white"  >
       <SimpleGrid
         columns={[1, 2, 3]}
         spacingX="40px"

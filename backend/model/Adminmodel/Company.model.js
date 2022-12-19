@@ -8,7 +8,7 @@ const companySchema = new mongoose.Schema({
     mob_number : {type : Number, require : true },
     email : {type : String, required : true},
     password : {type : String, required : true},
-    // role : { type : String , enum : ["compnay","student"], default : "company"}
+    role : { type : String , enum : ["company"], default : "company"}
 })
 
 const CompanyModel = mongoose.model("company_register", companySchema)

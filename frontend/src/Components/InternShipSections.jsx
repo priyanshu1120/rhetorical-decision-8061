@@ -64,7 +64,7 @@ function InternShipSections() {
           position: "top-right"
         });
         setTimeout(() => {
-          navigate('/company/register');
+          navigate('/company/register/profile-details');
         }, 2000)
       }
     })
@@ -87,13 +87,13 @@ function InternShipSections() {
                   onChange={handleInputChange}
                   value={internShipForm.internship_title}
                   >
-                    <option hidden>Add or select title for inernship</option>
-                    <option value='Full Time intern'>Full Time intern</option>
-                    <option value='Full Stack Developer'>Full Stack Developer</option>
-                    <option value='option3'>Option 3</option>
-                    <option value='option4'>Option 4</option>
-                    <option value='option5'>Option 5</option>
-                    <option value='option6'>Option 6</option>
+                     <option hidden>Add or select title for inernship</option>
+                     <option value='Full Time intern'>Full Time internShip</option>
+                     <option value='Full Stack Developer'>Full Stack Developer</option>
+                     <option value='option3'>Part Time InternShip</option>
+                     <option value='option4'>Dekstop Engineer</option>
+                     <option value='option5'>DevOps Engineer</option>
+                     <option value='option6'>Part time UI / UX InternShip</option>
                   </Select>
                 </FormLabel>
               </FormControl>
@@ -105,13 +105,12 @@ function InternShipSections() {
                   onChange={handleInputChange}
                   value={internShipForm.internship_category}
                   >
-                    <option hidden>Add or select company for inernship</option>
-                    <option value='option1'>Option 1</option>
-                    <option value='option2'>Option 2</option>
-                    <option value='option3'>Option 3</option>
-                    <option value='option4'>Option 4</option>
-                    <option value='option5'>Option 5</option>
-                    <option value='option6'>Option 6</option>
+                     <option hidden>Add or select company for inernship</option>
+                    <option value='option1'>App Design and Development</option>
+                    <option value='option2'>Digital Marketing</option>
+                    <option value='option3'>Content writing</option>
+                    <option value='option4'>Animation</option>
+                    <option value='option5'>Business Development</option>
                   </Select>
                 </FormLabel>
               </FormControl>
@@ -145,12 +144,8 @@ function InternShipSections() {
                 value={internShipForm.internship_starts}
                 variant='flushed' width={"75%"} >
                   <option hidden>Select when do you want to start ?</option>
-                  <option value='option1'>Full Time intern</option>
-                  <option value='option2'>Full Stack Developer</option>
-                  <option value='option3'>Option 3</option>
-                  <option value='option4'>Option 4</option>
-                  <option value='option5'>Option 5</option>
-                  <option value='option6'>Option 6</option>
+                  <option value='option2'>Later</option>
+                  <option value='option1'>Immediate</option>
                 </Select>
               </HStack>
 
@@ -256,12 +251,10 @@ function InternShipSections() {
                 value={internShipForm.specific_question}
                 variant='flushed' width={"75%"} >
                   <option hidden>Select any of questions.</option>
-                  <option value='option1'>Full Time intern</option>
-                  <option value='option2'>Full Stack Developer</option>
-                  <option value='option3'>Option 3</option>
-                  <option value='option4'>Option 4</option>
-                  <option value='option5'>Option 5</option>
-                  <option value='option6'>Option 6</option>
+                  <option value='option1'>Why we should hire you ?</option>
+                  <option value='option2'>where do you wanna see your self in next five years ?</option>
+                  <option value='option3'>what are your strengths & weaknesses ?</option>
+                  <option value='option4'>Why do you wanna work in our organisation ?</option>
                 </Select>
               </HStack>
 

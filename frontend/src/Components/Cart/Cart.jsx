@@ -8,6 +8,7 @@ import {
   Image
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
 
 const Cart = ({item,handleCartClear}) => {
     console.log("df",item)
@@ -81,7 +82,6 @@ console.log(amount)
                   h="100%"
                   display="flex"
                 >
-                 
                   <Image
                     ml="1rem"
                     mt="auto"
@@ -125,7 +125,7 @@ console.log(amount)
             ))}
             <Flex padding="1rem" flexDir="row-reverse">
               <Button
-              className="btn btn-awesome"
+                className="btn btn-awesome"
                 boxShadow="0px 1px 5px 0px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 3px 1px -2px rgb(0 0 0 / 12%);"
                 colorScheme="red"
                 size="sm"
@@ -176,9 +176,9 @@ console.log(amount)
                 G0
               </Button>
             </Flex>
-            <Flex mt="0.5rem">
-              Pay
-            </Flex>
+            <Link to="/checkout">
+              <Flex mt="0.5rem">Pay</Flex>
+            </Link>
           </Box>
         </Box>
       </Box>

@@ -150,7 +150,7 @@ function CompanyRegisterForm() {
               <Input
                 variant="flushed"
                 placeholder="Password *"
-                type={"text"}
+                type={"password"}
                 value={form.password}
                 name="password"
                 onChange= {handleInputChange}

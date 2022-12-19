@@ -107,7 +107,7 @@ const RegisterStudent = () => {
             </Heading>
             <Text>
               Already have an account?{" "}
-              <Link to="/student/login" style={{ color: "blue" }}>
+              <Link to="/login/student" style={{ color: "blue" }}>
                 Sign in
               </Link>
             </Text>
@@ -117,7 +117,7 @@ const RegisterStudent = () => {
           <Text textAlign={"left"} color="#80625d">
             If you are a company looking to hire interns, please register as a
             company by clicking{" "}
-            <Link to="#" style={{ color: "blue" }}>
+            <Link to="/company/register" style={{ color: "blue" }}>
               here
             </Link>
             .
@@ -197,6 +197,8 @@ const RegisterStudent = () => {
                 placeholder="First Name*"
                 name="firstname"
                 fontSize={18}
+                required
+                
               />
               {!isError ? (
                 <FormHelperText></FormHelperText>
@@ -214,6 +216,7 @@ const RegisterStudent = () => {
                 placeholder="Last Name*"
                 name="lastname"
                 fontSize={18}
+                required
               />
               {!lastError ? (
                 <FormHelperText></FormHelperText>
@@ -242,7 +245,7 @@ const RegisterStudent = () => {
 
           <FormControl isInvalid={passwordError}>
             <Input
-              type="text"
+              type="password"
               value={input.password}
               name="password"
               onChange={handleInputChange}

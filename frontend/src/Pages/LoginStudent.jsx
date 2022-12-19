@@ -45,13 +45,14 @@ const passwordError = input.password === "";
     e.preventDefault();
     dispatch(login(input)).then((res) => {
       console.log(res)
-      if (res.payload!==undefined) {
+      if (res.payload!=="authentication failed") {
         toast({
           title: "Login Successful.",
           description: "Welcome to Dashboard!",
           status: "success",
           duration: 2000,
           isClosable: true,
+          position:"top"
         });
         setTimeout(() => {
           localStorage.setItem("token",JSON.stringify(`Barer ${res.payload.token}`))
@@ -65,6 +66,7 @@ const passwordError = input.password === "";
           status: "error",
           duration: 2000,
           isClosable: true,
+          position:"top"
         });
       }
     });
@@ -79,6 +81,7 @@ const passwordError = input.password === "";
     w="100vw"
     h="auto"
     pt="1px"
+    mb={1}
   >
     <Box
       w={["full", "500px"]}
@@ -93,7 +96,7 @@ const passwordError = input.password === "";
     >
       <HStack w='full' justify='space-around'>
         <Text fontWeight={600}>STUDENT</Text>
-        <Text fontWeight={600}>COMPANY</Text>
+        <Link to="/company/login"><Text fontWeight={600}>COMPANY</Text></Link>
 
       </HStack>
       <VStack spacing={4} align="flex-start" w="full"  mt="10px">
@@ -190,7 +193,7 @@ const passwordError = input.password === "";
             placeholder="Email*"
             variant="flushed"
             fontSize={18}
-            isRequired
+            required
           />
           {!emailError ? (
             <FormHelperText></FormHelperText>
@@ -208,7 +211,7 @@ const passwordError = input.password === "";
             variant="flushed"
             placeholder="Password*"
             fontSize={18}
-            isRequired
+            required
           />
           {!passwordError ? (
             <FormHelperText></FormHelperText>

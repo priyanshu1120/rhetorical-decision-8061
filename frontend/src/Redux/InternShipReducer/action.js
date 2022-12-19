@@ -4,7 +4,7 @@ import axios from "axios";
 export const getInternShips = (header) => (dispatch) => {
   dispatch({ type: Types.GET_INTERNSHIP_LOADIING });
   return axios
-    .get("http://localhost:8080/internships", {
+    .get("https://intern-hub-api.up.railway.app/internships", {
       headers: {
         authorization: header,
       },
@@ -21,7 +21,7 @@ export const postInternShip = (payload) => (dispatch) => {
   dispatch({ type: Types.POST_INTERNSHIP_LOADIING });
 
   return axios.post(
-    "http://localhost:8080/internship/create",payload.internShipForm,{
+    "https://intern-hub-api.up.railway.app/internship/create",payload.internShipForm,{
       headers: {
         authorization: payload.token,
       },

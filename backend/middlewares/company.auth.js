@@ -11,8 +11,14 @@ const CompanyAuth = (req, res, next) => {
                 res.send({authErr : "Please login with the valid secret key"})
             }
             else{
+                const email = decoded.email;
+                req.body.email = email;
+                console.log(email);
+                
                 const userID = decoded.userID
-               req.body.userID = userID
+                req.body.userID = userID
+                console.log(userID);
+
                next()
             }
         });

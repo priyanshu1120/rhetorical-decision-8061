@@ -33,7 +33,7 @@ function CompanyLoginForm() {
         });
         setTimeout(() => {
           localStorage.setItem("token", JSON.stringify(` Bearer ${res.payload}`))
-          navigate("/company/dashboard");
+          navigate("/internship/create");
         }, 2000);
       } else {
         toast({
@@ -109,10 +109,11 @@ function CompanyLoginForm() {
             <Input
               variant="flushed"
               placeholder="Password *"
-              type={"text"}
+              type={"password"}
               marginBottom={"0.5rem"}
               name="password"
               value={form.password}
+
               onChange={handleInputChange}
             />
           </Box>
