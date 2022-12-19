@@ -1,4 +1,4 @@
-import {  Button, Heading, HStack, Image, Img, Input, Select, Stack, Text, Textarea, useToast } from '@chakra-ui/react'
+import {  Button, Heading, HStack , Input, Select, Stack, Text, Textarea, useToast } from '@chakra-ui/react'
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -30,10 +30,13 @@ function RegisterCompanyProfile() {
         setProfile({ ...profie, [name]: value })
       }
     
-      const handleSubmit = () => {
-        dispatch(postProfile({ profie, token })).then((res) => {
+      const handleSubmit = (e) => {
+        
+        e.preventDefault();
+        
+        dispatch(postProfile({ profie,token })).then((res) => {
+          console.log(res);
           if (res.payload){
-            // console.log(res);
             toast({
               title: "Your Company info got Added",
               status: "success",
@@ -46,7 +49,7 @@ function RegisterCompanyProfile() {
           }
         })
       }
-      console.log(profie);
+      // console.log(profie);
 
     return (
         <>
@@ -80,7 +83,7 @@ function RegisterCompanyProfile() {
                     name='website'
                     onChange={handleInputChange}
                     value={profie.website}
-                    placeholder='https://www.internhub.com' width={"70%"} variant={"flushed"} type={"url"}  />
+                    placeholder='https://www.internhub.com' width={"70%"} variant={"flushed"} type={"text"}  />
                 </HStack>
                 
                 <HStack marginBottom={"1rem"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} >
