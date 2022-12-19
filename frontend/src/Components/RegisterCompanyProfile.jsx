@@ -33,7 +33,7 @@ function RegisterCompanyProfile() {
       const handleSubmit = () => {
         dispatch(postProfile({ profie, token })).then((res) => {
           if (res.payload){
-            console.log(res);
+            // console.log(res);
             toast({
               title: "Your Company info got Added",
               status: "success",

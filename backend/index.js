@@ -26,7 +26,8 @@ app.get("/",(req,res)=>{
 
 app.use("/company",companyController);
 app.use("/internships",userInternshipRouter);
-app.use("/profile-details",CompanyAuth,Authorization(["company"]),profileRouter);
+// CompanyAuth,Authorization(["company"]),
+app.use("/profile-details",profileRouter);
 app.use("/internship",CompanyAuth,Authorization(["company"]),internShipRouter);
 
 app.use("/studentuser",studentUserRouter)
