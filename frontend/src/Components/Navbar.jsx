@@ -64,7 +64,7 @@ function Navbar() {
                                     fontWeight="bold"
                                 >
                                     <Icon w="6" h="6" mr="1rem" as={MdFormatAlignJustify} />{" "}
-                                    <Link to="/intern">
+                                    <Link to="/internship">
                                         <p>Internship</p>
                                     </Link>
                                 </HStack>
