@@ -4,7 +4,7 @@ import axios from "axios";
 export const getProfile = (header) => (dispatch) => {
     dispatch({ type: Types.GET_PROFILE_LOADIING });
     return axios
-      .get("http://localhost:8080/profile-details", {
+      .get("https://intern-hub-api.up.railway.app/profile-details", {
         headers: {
           authorization: header,
         },
@@ -21,7 +21,7 @@ export const getProfile = (header) => (dispatch) => {
     dispatch({ type: Types.POST_PROFILE_LOADIING });
   
     return axios.post(
-      "http://localhost:8080/profile-details/create",payload.profile,{
+      "https://intern-hub-api.up.railway.app/profile-details/create",payload.profile,{
         headers: {
           authorization: payload.token,
         },
