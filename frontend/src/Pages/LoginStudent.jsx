@@ -224,7 +224,7 @@ const passwordError = input.password === "";
            <Checkbox  fontSize={18}> Reminder Me.</Checkbox>
            <Button variant='link' colorScheme='blue' fontSize={18}>Forgot Password ?</Button>
       </HStack>
-          <Text mt={5}>Don't have an account? <Link style={{color:"blue"}}>Create your Account</Link></Text>
+          <Text mt={5}>Don't have an account? <Link to="/register/student" style={{color:"blue"}}>Create your Account</Link></Text>
         <Input
           type="submit"
           variant="outline"
