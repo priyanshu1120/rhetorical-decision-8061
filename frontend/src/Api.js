@@ -1,1 +1,1 @@
-export const baseurl = "https://intern-hub-api.up.railway.app"
+export const baseurl = "https://zany-lime-barnacle-kit.cyclic.app"

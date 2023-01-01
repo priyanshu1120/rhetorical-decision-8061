@@ -1,10 +1,11 @@
 import * as Types from "./actionTypes";
 import axios from "axios";
+import { baseurl } from "../../Api"
 
 export const getInternShips = (header) => (dispatch) => {
   dispatch({ type: Types.GET_INTERNSHIP_LOADIING });
   return axios
-    .get("https://intern-hub-api.up.railway.app/internships", {
+    .get(`${baseurl}/internships`, {
       headers: {
         authorization: header,
       },
@@ -21,7 +22,7 @@ export const postInternShip = (payload) => (dispatch) => {
   dispatch({ type: Types.POST_INTERNSHIP_LOADIING });
 
   return axios.post(
-    "https://intern-hub-api.up.railway.app/internship/create",payload.internShipForm,{
+    `${baseurl}/internship/create`,payload.internShipForm,{
       headers: {
         authorization: payload.token,
       },
@@ -41,42 +42,4 @@ export const postInternShip = (payload) => (dispatch) => {
 
 
 
-
-
-// export const  deleteInternShip = () =>  (dispatch) =>{
-
-//     dispatch({type:Types.DELETE_INTERNSHIP_LOADIING})
-//        return  axios.delete(`internship/${payload.id}`,{
-//         headers: {
-//             // "authorization": 
-//          }
-//        })
-//        .then((res)=>{
-//         return  dispatch({type:Types.DELETE_INTERNSHIP_SUCCESS,payload:res.data})
-//        })
-//        .catch((err)=>{
-//            dispatch({type:Types.DELETE_INTERNSHIP_ERROR})  
-//        })
-   
-//    }
-
-
-
-   
-//    export const  patchInternShip = () =>  (dispatch) =>{
-   
-//     dispatch({type:Types.PATCH_INTERNSHIP_LOADIING})
-//        return  axios.patch(`}`,,{
-//         headers: {
-//             // "authorization": 
-//          }
-//        })
-//        .then((res)=>{
-//         return  dispatch({type:Types.PATCH_INTERNSHIP_SUCCESS,payload:res.data})
-//        })
-//        .catch((err)=>{
-//            dispatch({type:Types.PATCH_INTERNSHIP_ERROR})  
-//        })
-   
-//    }
 

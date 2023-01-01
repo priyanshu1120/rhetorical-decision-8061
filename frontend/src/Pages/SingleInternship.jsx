@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom';
+import { baseurl } from '../Api';
 
 const SingleInternship = () => {
     const { id } = useParams();
@@ -12,7 +13,7 @@ const SingleInternship = () => {
     const [data, setData] = useState()
 
     useEffect(() => {
-        axios.get("https://intern-hub-api.up.railway.app/profile-details")
+        axios.get(`${baseurl}/profile-details`)
             .then(res => setData(res.data))
             .catch(err => console.log(err))
     }, [])

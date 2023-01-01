@@ -1,10 +1,11 @@
 import * as Types from "./actionTypes";
 import axios from "axios";
+import { baseurl } from "../../Api";
 
 export const getProfile = (header) => (dispatch) => {
     dispatch({ type: Types.GET_PROFILE_LOADIING });
     return axios
-      .get("https://intern-hub-api.up.railway.app/profile-details", {
+      .get(`${baseurl}/profile-details`, {
         headers: {
           authorization: header,
         },
@@ -21,7 +22,7 @@ export const getProfile = (header) => (dispatch) => {
     dispatch({ type: Types.POST_PROFILE_LOADIING });
 
     return axios.post(
-      "https://intern-hub-api.up.railway.app/profile-details/create",payload.profie,{
+      `${baseurl}/profile-details/create`,payload.profie,{
         headers: {
           authorization: payload.token,
         },

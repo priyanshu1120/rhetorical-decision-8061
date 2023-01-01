@@ -4,11 +4,13 @@ import React, { useEffect } from 'react'
 import Intern from '../Components/Intern'
 import { useState } from "react";
 import axios from 'axios';
+import { baseurl } from '../Api';
+
 const InternShip = () => {
     const [data, setData] = useState()
     
     useEffect(()=>{
-        axios.get("https://intern-hub-api.up.railway.app/profile-details")
+        axios.get(`${baseurl}/profile-details`)
         .then(res=>setData(res.data))
         .catch(err=>console.log(err))
     },[])
